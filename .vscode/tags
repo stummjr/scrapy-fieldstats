@@ -1,0 +1,105 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+FieldStatsExtension	../scrapy_fieldstats/fieldstats.py	/^class FieldStatsExtension(object):$/;"	kind:class	line:12
+GITHUB_REPO	../travis_pypi_setup.py	/^GITHUB_REPO = 'stummjr\/scrapy_fieldstats'$/;"	kind:variable	line:23
+NotConfigured	../scrapy_fieldstats/fieldstats.py	/^from scrapy.exceptions import NotConfigured$/;"	kind:namespace	line:7
+PKCS1v15	../travis_pypi_setup.py	/^from cryptography.hazmat.primitives.asymmetric.padding import PKCS1v15$/;"	kind:namespace	line:14
+TRAVIS_CONFIG_FILE	../travis_pypi_setup.py	/^TRAVIS_CONFIG_FILE = os.path.join($/;"	kind:variable	line:24
+__email__	../scrapy_fieldstats/__init__.py	/^__email__ = 'stummjr@gmail.com'$/;"	kind:variable	line:6
+__init__	../scrapy_fieldstats/fieldstats.py	/^    def __init__(self):$/;"	kind:member	line:16
+__init__.py	../scrapy_fieldstats/__init__.py	1;"	kind:file	line:1
+__init__.py	../tests/__init__.py	1;"	kind:file	line:1
+__version__	../scrapy_fieldstats/__init__.py	/^__version__ = '0.1.0'$/;"	kind:variable	line:7
+argparse	../travis_pypi_setup.py	/^    import argparse$/;"	kind:namespace	line:119
+args	../travis_pypi_setup.py	/^    args = parser.parse_args()$/;"	kind:variable	line:126
+author	../setup.py	/^    author="Valdir Stumm Junior",$/;"	kind:variable	line:33
+author_email	../setup.py	/^    author_email='stummjr@gmail.com',$/;"	kind:variable	line:34
+base64	../travis_pypi_setup.py	/^import base64$/;"	kind:namespace	line:7
+build_stats	../scrapy_fieldstats/scrapy_fieldstats.py	/^def build_stats(items):$/;"	kind:function	line:4
+classifiers	../setup.py	/^    classifiers=[$/;"	kind:variable	line:42
+compute_fieldstats	../scrapy_fieldstats/fieldstats.py	/^    def compute_fieldstats(self):$/;"	kind:member	line:41
+conf.py	../docs/conf.py	1;"	kind:file	line:1
+copyright	../docs/conf.py	/^copyright = u"2017, Valdir Stumm Junior"$/;"	kind:variable	line:59
+cwd	../docs/conf.py	/^cwd = os.getcwd()$/;"	kind:variable	line:26
+default_backend	../travis_pypi_setup.py	/^from cryptography.hazmat.backends import default_backend$/;"	kind:namespace	line:13
+defaultdict	../scrapy_fieldstats/fieldstats.py	/^from collections import defaultdict$/;"	kind:namespace	line:4
+description	../setup.py	/^    description="An extension to generate a summary of fields coverage from your scraped data.",$/;"	kind:variable	line:31
+encrypt	../travis_pypi_setup.py	/^def encrypt(pubkey, password):$/;"	kind:function	line:44
+exclude_patterns	../docs/conf.py	/^exclude_patterns = ['_build']$/;"	kind:variable	line:82
+extensions	../docs/conf.py	/^extensions = ['sphinx.ext.autodoc', 'sphinx.ext.viewcode']$/;"	kind:variable	line:43
+fetch_public_key	../travis_pypi_setup.py	/^def fetch_public_key(repo):$/;"	kind:function	line:55
+fieldstats.py	../scrapy_fieldstats/fieldstats.py	1;"	kind:file	line:1
+find_packages	../setup.py	/^from setuptools import setup, find_packages$/;"	kind:namespace	line:6
+fixture	../tests/test_scrapy_fieldstats.py	/^fixture = [$/;"	kind:variable	line:19
+from_crawler	../scrapy_fieldstats/fieldstats.py	/^    def from_crawler(cls, crawler):$/;"	kind:member	line:21
+getpass	../travis_pypi_setup.py	/^from getpass import getpass$/;"	kind:namespace	line:10
+help	../travis_pypi_setup.py	/^                        help='GitHub repo (default: %s)' % GITHUB_REPO)$/;"	kind:variable	line:122
+help	../travis_pypi_setup.py	/^                        help='PyPI password (will prompt if not provided)')$/;"	kind:variable	line:124
+history	../setup.py	/^    history = history_file.read()$/;"	kind:variable	line:12
+html_static_path	../docs/conf.py	/^html_static_path = ['_static']$/;"	kind:variable	line:145
+html_theme	../docs/conf.py	/^html_theme = 'default'$/;"	kind:variable	line:114
+htmlhelp_basename	../docs/conf.py	/^htmlhelp_basename = 'scrapy_fieldstatsdoc'$/;"	kind:variable	line:191
+include_package_data	../setup.py	/^    include_package_data=True,$/;"	kind:variable	line:37
+install_requires	../setup.py	/^    install_requires=requirements,$/;"	kind:variable	line:38
+item_scraped	../scrapy_fieldstats/fieldstats.py	/^    def item_scraped(self, item, spider):$/;"	kind:member	line:30
+json	../travis_pypi_setup.py	/^import json$/;"	kind:namespace	line:8
+keywords	../setup.py	/^    keywords='scrapy_fieldstats',$/;"	kind:variable	line:41
+latex_documents	../docs/conf.py	/^latex_documents = [$/;"	kind:variable	line:210
+latex_elements	../docs/conf.py	/^latex_elements = {$/;"	kind:variable	line:196
+license	../setup.py	/^    license="MIT license",$/;"	kind:variable	line:39
+load_key	../travis_pypi_setup.py	/^def load_key(pubkey):$/;"	kind:function	line:28
+load_pem_public_key	../travis_pypi_setup.py	/^from cryptography.hazmat.primitives.serialization import load_pem_public_key$/;"	kind:namespace	line:12
+load_yaml_config	../travis_pypi_setup.py	/^def load_yaml_config(filepath):$/;"	kind:function	line:80
+logger	../scrapy_fieldstats/fieldstats.py	/^logger = logging.getLogger(__name__)$/;"	kind:variable	line:9
+logging	../scrapy_fieldstats/fieldstats.py	/^import logging$/;"	kind:namespace	line:2
+long_description	../setup.py	/^    long_description=readme + '\\n\\n' + history,$/;"	kind:variable	line:32
+main	../travis_pypi_setup.py	/^def main(args):$/;"	kind:function	line:105
+man_pages	../docs/conf.py	/^man_pages = [$/;"	kind:variable	line:241
+master_doc	../docs/conf.py	/^master_doc = 'index'$/;"	kind:variable	line:55
+name	../setup.py	/^    name='scrapy_fieldstats',$/;"	kind:variable	line:29
+os	../docs/conf.py	/^import os$/;"	kind:namespace	line:17
+os	../travis_pypi_setup.py	/^import os$/;"	kind:namespace	line:9
+packages	../setup.py	/^    packages=find_packages(include=['scrapy_fieldstats']),$/;"	kind:variable	line:36
+parser	../travis_pypi_setup.py	/^    parser = argparse.ArgumentParser(description=__doc__)$/;"	kind:variable	line:120
+pprint	../scrapy_fieldstats/fieldstats.py	/^import pprint$/;"	kind:namespace	line:3
+prepend_line	../travis_pypi_setup.py	/^def prepend_line(filepath, line):$/;"	kind:function	line:69
+print_function	../travis_pypi_setup.py	/^from __future__ import print_function$/;"	kind:namespace	line:6
+project	../docs/conf.py	/^project = u'Scrapy FieldStats'$/;"	kind:variable	line:58
+project_root	../docs/conf.py	/^project_root = os.path.dirname(cwd)$/;"	kind:variable	line:27
+pygments_style	../docs/conf.py	/^pygments_style = 'sphinx'$/;"	kind:variable	line:100
+pytest	../tests/test_scrapy_fieldstats.py	/^import pytest$/;"	kind:namespace	line:6
+readme	../setup.py	/^    readme = readme_file.read()$/;"	kind:variable	line:9
+release	../docs/conf.py	/^release = scrapy_fieldstats.__version__$/;"	kind:variable	line:68
+requirements	../setup.py	/^requirements = [$/;"	kind:variable	line:14
+save_yaml_config	../travis_pypi_setup.py	/^def save_yaml_config(filepath, config):$/;"	kind:function	line:86
+scrapy_fieldstats	../docs/conf.py	/^import scrapy_fieldstats$/;"	kind:namespace	line:34
+scrapy_fieldstats	../tests/test_scrapy_fieldstats.py	/^from scrapy_fieldstats import scrapy_fieldstats$/;"	kind:namespace	line:7
+scrapy_fieldstats.py	../scrapy_fieldstats/scrapy_fieldstats.py	1;"	kind:file	line:1
+setup	../setup.py	/^from setuptools import setup, find_packages$/;"	kind:namespace	line:6
+setup.py	../setup.py	1;"	kind:file	line:1
+setup_requirements	../setup.py	/^setup_requirements = [$/;"	kind:variable	line:18
+setup_requires	../setup.py	/^    setup_requires=setup_requirements,$/;"	kind:variable	line:57
+signals	../scrapy_fieldstats/fieldstats.py	/^from scrapy import signals$/;"	kind:namespace	line:6
+source_suffix	../docs/conf.py	/^source_suffix = '.rst'$/;"	kind:variable	line:49
+spider_closed	../scrapy_fieldstats/fieldstats.py	/^    def spider_closed(self, spider):$/;"	kind:member	line:37
+sys	../docs/conf.py	/^import sys$/;"	kind:namespace	line:16
+templates_path	../docs/conf.py	/^templates_path = ['_templates']$/;"	kind:variable	line:46
+test_build_stats	../tests/test_scrapy_fieldstats.py	/^def test_build_stats(items):$/;"	kind:function	line:37
+test_requirements	../setup.py	/^test_requirements = [$/;"	kind:variable	line:23
+test_scrapy_fieldstats.py	../tests/test_scrapy_fieldstats.py	1;"	kind:file	line:1
+test_suite	../setup.py	/^    test_suite='tests',$/;"	kind:variable	line:55
+tests_require	../setup.py	/^    tests_require=test_requirements,$/;"	kind:variable	line:56
+texinfo_documents	../docs/conf.py	/^texinfo_documents = [$/;"	kind:variable	line:256
+travis_pypi_setup.py	../travis_pypi_setup.py	1;"	kind:file	line:1
+update_travis_deploy_password	../travis_pypi_setup.py	/^def update_travis_deploy_password(encrypted_password):$/;"	kind:function	line:92
+url	../setup.py	/^    url='https:\/\/github.com\/stummjr\/scrapy_fieldstats',$/;"	kind:variable	line:35
+urlopen	../travis_pypi_setup.py	/^    from urllib import urlopen$/;"	kind:namespace	line:18
+urlopen	../travis_pypi_setup.py	/^    from urllib.request import urlopen$/;"	kind:namespace	line:20
+version	../docs/conf.py	/^version = scrapy_fieldstats.__version__$/;"	kind:variable	line:66
+version	../setup.py	/^    version='0.1.0',$/;"	kind:variable	line:30
+yaml	../travis_pypi_setup.py	/^import yaml$/;"	kind:namespace	line:11
+zip_safe	../setup.py	/^    zip_safe=False,$/;"	kind:variable	line:40
