@@ -5,7 +5,7 @@ Credits
 Development Lead
 ----------------
 
-* Valdir Stumm Junior <stummjr@gmail.com>
+* Valdir Stumm Junior <stummjr gmail com>
 
 Contributors
 ------------
