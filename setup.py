@@ -1,12 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
-"""The setup script."""
-
 from setuptools import setup, find_packages
-
-with open('README.md') as readme_file:
-    readme = readme_file.read()
 
 requirements = [
     'scrapy',
@@ -23,8 +17,7 @@ test_requirements = [
 setup(
     name='scrapy-fieldstats',
     version='0.1.0',
-    description="An extension to generate a summary of fields coverage from your scraped data.",
-    long_description=readme,
+    description="A Scrapy extension to generate a summary of fields coverage from your scraped data.",
     author="Valdir Stumm Junior",
     author_email='stummjr@gmail.com',
     url='https://github.com/stummjr/scrapy_fieldstats',
@@ -39,12 +32,7 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
-        "Programming Language :: Python :: 2",
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
     ],
     test_suite='tests',
