@@ -5,14 +5,11 @@
 
 from setuptools import setup, find_packages
 
-with open('README.rst') as readme_file:
+with open('README.md') as readme_file:
     readme = readme_file.read()
 
-with open('HISTORY.rst') as history_file:
-    history = history_file.read()
-
 requirements = [
-    # TODO: put package requirements here
+    'scrapy',
 ]
 
 setup_requirements = [
@@ -24,10 +21,10 @@ test_requirements = [
 ]
 
 setup(
-    name='scrapy_fieldstats',
+    name='scrapy-fieldstats',
     version='0.1.0',
     description="An extension to generate a summary of fields coverage from your scraped data.",
-    long_description=readme + '\n\n' + history,
+    long_description=readme,
     author="Valdir Stumm Junior",
     author_email='stummjr@gmail.com',
     url='https://github.com/stummjr/scrapy_fieldstats',
