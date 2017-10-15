@@ -1,7 +1,6 @@
 # -*- coding:utf-8 -*-
 import logging
 import pprint
-from collections import defaultdict
 
 from scrapy import signals
 from scrapy.exceptions import NotConfigured
@@ -10,12 +9,12 @@ logger = logging.getLogger(__name__)
 
 
 class FieldStatsExtension(object):
-    """ When enabled, the FieldStats extensions logs the percentage of
+    """ When enabled, the FieldStats extension logs the percentage of
         items coverage for a crawl.
     """
     def __init__(self):
         self.item_count = 0
-        self.field_counts = defaultdict(int)
+        self.field_counts = {}
 
     @classmethod
     def from_crawler(cls, crawler):
@@ -28,20 +27,46 @@ class FieldStatsExtension(object):
         return ext
 
     def item_scraped(self, item, spider):
+        self.compute_item(item)
+
+    def spider_closed(self, spider):
+        fields_summary = self.build_fields_summary()
+        logger.info('Field stats:\n{}'.format(pprint.pformat(fields_summary)))
+
+    def compute_item(self, item):
         self.item_count += 1
+        self.count_item_fields(item)
+
+    def count_item_fields(self, item, current_node=None):
+        if current_node is None:
+            current_node = self.field_counts
+
         for name, value in item.items():
             if not value:
                 continue
-            self.field_counts[name] += 1
 
-    def spider_closed(self, spider):
-        field_stats = self.compute_fieldstats()
-        logger.info('Field stats:\n{}'.format(pprint.pformat(field_stats)))
+            if isinstance(value, dict):
+                # recurse into nested items
+                if name not in current_node:
+                    current_node[name] = {}
+                self.count_item_fields(value, current_node=current_node[name])
+                continue
 
-    def compute_fieldstats(self):
-        field_stats = {}
-        for name, count in self.field_counts.items():
-            field_coverage = int(count) * 100 / self.item_count
-            field_stats[name] = "{}%".format(field_coverage)
+            if name not in current_node:
+                current_node[name] = 0
+            current_node[name] += 1
 
-        return field_stats
+    def build_fields_summary(self, field_counts=None, fields_summary=None):
+        if field_counts is None:
+            field_counts = self.field_counts
+            fields_summary = {}
+
+        for name, value in field_counts.items():
+            if isinstance(value, dict):
+                fields_summary[name] = {}
+                self.build_fields_summary(field_counts[name], fields_summary[name])
+            else:
+                field_percentage = int(value) * 100 / self.item_count
+                fields_summary[name] = "{}%".format(field_percentage)
+
+        return fields_summary
