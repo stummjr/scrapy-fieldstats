@@ -12,16 +12,18 @@ class FieldStatsExtension(object):
     """ When enabled, the FieldStats extension logs the percentage of
         items coverage for a crawl.
     """
-    def __init__(self):
+    def __init__(self, show_counts=False):
         self.item_count = 0
         self.field_counts = {}
+        self.show_counts = show_counts
 
     @classmethod
     def from_crawler(cls, crawler):
         if not crawler.settings.getbool('FIELDSTATS_ENABLED'):
             raise NotConfigured
 
-        ext = cls()
+        show_counts = crawler.settings.getbool('FIELDSTATS_COUNTS_ONLY', False)
+        ext = cls(show_counts)
         crawler.signals.connect(ext.item_scraped, signal=signals.item_scraped)
         crawler.signals.connect(ext.spider_closed, signal=signals.spider_closed)
         return ext
@@ -30,8 +32,13 @@ class FieldStatsExtension(object):
         self.compute_item(item)
 
     def spider_closed(self, spider):
-        fields_summary = self.build_fields_summary()
-        logger.info('Field stats:\n{}'.format(pprint.pformat(fields_summary)))
+        if self.show_counts:
+            report_data = pprint.pformat(self.field_counts)
+        else:
+            report_data = self.build_fields_summary()
+
+        message = 'Field stats:\n{}'.format(report_data)
+        logger.info(message)
 
     def compute_item(self, item):
         self.item_count += 1
