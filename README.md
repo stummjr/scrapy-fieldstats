@@ -17,9 +17,12 @@ $ scrapy crawl example
 ...
 2017-10-12 11:10:20 [scrapy_fieldstats.fieldstats] INFO: Field stats:
 {
-    'author': '98.0%',
-    'image':  '97.0%',
-    'title':  '99.0%',
+    'author': {
+        'name': '100.0%',
+        'age':  '52.0%'
+    },
+    'image':  '97.0%',
+    'title':  '100.0%',
     'price':  '92.0%',
     'stars':  '47.5%'
 }
@@ -43,8 +46,15 @@ EXTENSIONS = {
 }
 FIELDSTATS_ENABLED = True
 ```
-
 That's all! Now run your job and have a look at the field stats.
+
+
+## Settings
+The settings below can be defined as any other Scrapy settings, as described on [Scrapy docs](https://doc.scrapy.org/en/latest/topics/settings.html#populating-the-settings).
+
+* `FIELDSTATS_ENABLED`: to enable/disable the extension.
+* `FIELDSTATS_COUNTS_ONLY`: when `True`, the extension will output absolute counts, instead of percentages.
+
 
 ## Contributing
 If you spot a bug, or want to propose a new feature please create an issue in this project's
