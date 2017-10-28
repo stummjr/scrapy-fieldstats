@@ -16,7 +16,7 @@ test_requirements = [
 
 setup(
     name='scrapy-fieldstats',
-    version='0.1.2',
+    version='0.1.3',
     description="A Scrapy extension to generate a summary of fields coverage from your scraped data.",
     author="Valdir Stumm Junior",
     author_email='stummjr@gmail.com',
