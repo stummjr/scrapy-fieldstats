@@ -33,11 +33,11 @@ class FieldStatsExtension(object):
 
     def spider_closed(self, spider):
         if self.show_counts:
-            report_data = pprint.pformat(self.field_counts)
+            report_data = self.field_counts
         else:
             report_data = self.build_fields_summary()
 
-        message = 'Field stats:\n{}'.format(report_data)
+        message = 'Field stats:\n{}'.format(pprint.pformat(report_data))
         logger.info(message)
 
     def compute_item(self, item):
