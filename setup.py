@@ -2,9 +2,7 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup, find_packages
 
-requirements = [
-    'scrapy',
-]
+requirements = []
 
 setup_requirements = [
     'pytest-runner',
