@@ -49,9 +49,6 @@ class FieldStatsExtension(object):
             current_node = self.field_counts
 
         for name, value in item.items():
-            if not value:
-                continue
-
             if isinstance(value, dict):
                 # recurse into nested items
                 if name not in current_node:
