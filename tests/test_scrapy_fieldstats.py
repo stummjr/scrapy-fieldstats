@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from scrapy_fieldstats.fieldstats import FieldStatsExtension
 
@@ -116,12 +115,12 @@ def test_many_items_many_fields_empty_field():
     field_stats = extract_fake_items_and_compute_stats(fake_items)
     assert len(field_stats) == 2
     assert field_stats['field1'] == '100.0%'
-    assert field_stats['field2'] == '50.0%'
+    assert field_stats['field2'] == '100.0%'
 
     field_stats = extract_fake_items_and_compute_stats(fake_items, show_counts=True)
     assert len(field_stats) == 2
     assert field_stats['field1'] == 2
-    assert field_stats['field2'] == 1
+    assert field_stats['field2'] == 2
 
 
 def test_nested_items():
@@ -155,11 +154,32 @@ def test_nested_items():
     assert field_stats['field2']['field2.1'] == '100.0%'
     assert field_stats['field2']['field2.2'] == '50.0%'
     assert field_stats['field2']['field2.2'] == '50.0%'
-    assert field_stats['field2']['field2.3']['field2.3.2'] == '50.0%'
+    assert field_stats['field2']['field2.3']['field2.3.2'] == '100.0%'
 
     field_stats = extract_fake_items_and_compute_stats(fake_items, show_counts=True)
     assert field_stats['field1'] == 2
     assert field_stats['field2']['field2.1'] == 2
     assert field_stats['field2']['field2.2'] == 1
     assert field_stats['field2']['field2.2'] == 1
-    assert field_stats['field2']['field2.3']['field2.3.2'] == 1
+    assert field_stats['field2']['field2.3']['field2.3.2'] == 2
+
+
+def test_items_false_values():
+    fake_items = [
+        {
+            "field1": False,
+            "field2": 0,
+        },
+        {
+            "field1": True,
+            "field2": 1,
+        }
+    ]
+
+    field_stats = extract_fake_items_and_compute_stats(fake_items)
+    assert field_stats['field1'] == '100.0%'
+    assert field_stats['field2'] == '100.0%'
+
+    field_stats = extract_fake_items_and_compute_stats(fake_items, show_counts=True)
+    assert field_stats['field1'] == 2
+    assert field_stats['field2'] == 2
