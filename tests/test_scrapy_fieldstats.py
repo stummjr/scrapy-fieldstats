@@ -2,8 +2,8 @@
 from scrapy_fieldstats.fieldstats import FieldStatsExtension
 
 
-def extract_fake_items_and_compute_stats(fake_items, show_counts=False):
-    ext = FieldStatsExtension()
+def extract_fake_items_and_compute_stats(fake_items, show_counts=False, skip_none=True):
+    ext = FieldStatsExtension(skip_none=skip_none)
     for item in fake_items:
         ext.compute_item(item)
 
@@ -119,6 +119,20 @@ def test_many_items_many_fields_empty_field():
 
     field_stats = extract_fake_items_and_compute_stats(fake_items, show_counts=True)
     assert len(field_stats) == 2
+    assert field_stats['field1'] == 2
+    assert field_stats['field2'] == 2
+
+
+def test_none_values():
+    fake_items = [
+        {"field1": None, "field2": ""},
+        {"field1": "value1", "field2": "value2"},
+    ]
+    field_stats = extract_fake_items_and_compute_stats(fake_items, show_counts=True)
+    assert field_stats['field1'] == 1
+    assert field_stats['field2'] == 2
+
+    field_stats = extract_fake_items_and_compute_stats(fake_items, show_counts=True, skip_none=False)
     assert field_stats['field1'] == 2
     assert field_stats['field2'] == 2
 
