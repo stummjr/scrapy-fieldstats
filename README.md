@@ -54,6 +54,8 @@ The settings below can be defined as any other Scrapy settings, as described on 
 
 * `FIELDSTATS_ENABLED`: to enable/disable the extension.
 * `FIELDSTATS_COUNTS_ONLY`: when `True`, the extension will output absolute counts, instead of percentages.
+* `FIELDSTATS_SKIP_NONE`: when `True`, `None` values won't be counted as existing values for fields.
+* `FIELDSTATS_ADD_TO_STATS`: when `True`, the extension will add the field coverage report to the job stats.
 
 
 ## Contributing
