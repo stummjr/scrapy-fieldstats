@@ -80,6 +80,6 @@ class FieldStatsExtension(object):
                 self.build_fields_summary(field_counts[name], fields_summary[name])
             else:
                 field_percentage = int(value) * 100 / self.item_count
-                fields_summary[name] = "{}%".format(field_percentage)
+                fields_summary[name] = "{:.1f}%".format(field_percentage)
 
         return fields_summary
