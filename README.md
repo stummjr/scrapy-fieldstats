@@ -1,6 +1,9 @@
 Scrapy FieldStats
 =================
 
+![](https://github.com/stummjr/scrapy-fieldstats/workflows/CI/badge.svg)
+[![Downloads](https://pepy.tech/badge/scrapy-fieldstats)](https://pepy.tech/project/scrapy-fieldstats)
+
 A Scrapy extension that generates a summary of fields coverage from your scraped data.
 
 
